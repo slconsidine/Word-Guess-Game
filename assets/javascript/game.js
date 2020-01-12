@@ -17,6 +17,11 @@ console.log (answerArray);
 var div = document.getElementById("guessWord");
 div.innerHTML = answerArray.join(" ");
 
+// Win Counter
+var wins = 0;
+var div3 = document.getElementById("winTally");
+div3.innerHTML = wins;
+
 // Guess Remaining Counter
 var guessesLeft = 12;
 var div2 = document.getElementById("remainingGuess");
@@ -28,10 +33,11 @@ document.onkeyup = function(event) {
     console.log(userGuess);
 
 // Alerts loss if guesses run out
-if (guessesLeft === 1) {
+if (guessesLeft === 0) {
     div.innerHTML = word;
     alert("You lost");
 }
+
 
 // Fills in user guess if in word and marks down counter if it's not
 if (word.includes(userGuess)) {
@@ -41,17 +47,18 @@ if (word.includes(userGuess)) {
             console.log(answerArray);
         } 
         div.innerHTML = answerArray.join(" ");
+
     }
+    if (guessesLeft > 0 && (!answerArray.includes("_"))) {
+        alert("YOu win");
+        wins++;
+        div3.innerHTML = wins;
+    } 
 } else {
     guessesLeft--;
 }
 div2.innerHTML = guessesLeft;
 }
-
-// User guesses word
-if (!answerArray.includes("_")) {
-    alert("You win");
-} 
 
 // New word button
 document.getElementById("new").addEventListener("click", function(){
