@@ -1,0 +1,32 @@
+html {
+    background-image: url(../images/darkness/darkness.png);
+    background-image: repeat;
+}
+
+body {
+    background-color: transparent;
+    font-family: 'Baskervville', serif;
+}
+
+h1 {
+    color: #ffcc67;
+    margin: auto;
+    padding: 20px;
+    font-size: 48px;
+    text-align: center;
+}
+
+p {
+    color: #ffffff;
+    margin: auto;
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0.25em;
+}
+
+div {
+    padding: 10px 0px;
+    color: #ffffff;
+    text-align: center;
+}
