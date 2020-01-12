@@ -12,8 +12,15 @@ for (var i = 0; i < word.length; i++) {
 console.log (word.length);
 console.log (answerArray);
 
+// Prints guess word spaces to the DOM 
 var div = document.getElementById("guessWord");
 div.innerHTML = answerArray.join(" ");
+
+// Notices user text entry
+document.onkeyup = function(event) {
+    var userGuess = event.key;
+    console.log(userGuess);
+}
 
 // document.getElementById('guessWord').textContent = answerArray;
 
