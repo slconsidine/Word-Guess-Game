@@ -30,3 +30,7 @@ div {
     color: #ffffff;
     text-align: center;
 }
+
+#remainingGuess {
+    font-size: 30px;
+}

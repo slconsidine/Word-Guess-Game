@@ -27,6 +27,12 @@ document.onkeyup = function(event) {
     var userGuess = event.key;
     console.log(userGuess);
 
+// Alerts loss if guesses run out
+if (guessesLeft === 1) {
+    div.innerHTML = word;
+    alert("You lost");
+}
+
 // Fills in user guess if in word and marks down counter if it's not
 if (word.includes(userGuess)) {
     for (var j = 0; j < word.length; j++) {
@@ -41,3 +47,22 @@ if (word.includes(userGuess)) {
 }
 div2.innerHTML = guessesLeft;
 }
+
+// User guesses word
+if (!answerArray.includes("_")) {
+    alert("You win");
+} 
+
+// New word button
+document.getElementById("new").addEventListener("click", function(){
+    word = words[Math.floor(Math.random() * words.length)];
+    answerArray = [];
+    console.log(word);
+    for (var i = 0; i < word.length; i++) {
+    answerArray[i] = "_";
+    div.innerHTML = answerArray.join(" ");
+    guessesLeft = 12;
+    div2.innerHTML = guessesLeft;
+    };
+});
+
