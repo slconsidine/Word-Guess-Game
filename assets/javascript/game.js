@@ -1,4 +1,4 @@
-var words = ["Harry", "Hermione", "Ron", "Hogwarts", "Voldemort", "Dumbledore", "Hagrid", "Quidditch"]; // possible word options
+var words = ["harry", "hermione", "ron", "hogwarts", "voldemort", "dumbledore", "hagrid", "quidditch"]; // possible word options
 
 // Pick a random word
 var word = words[Math.floor(Math.random() * words.length)];
@@ -20,30 +20,13 @@ div.innerHTML = answerArray.join(" ");
 document.onkeyup = function(event) {
     var userGuess = event.key;
     console.log(userGuess);
+
+    for (var j = 0; j < word.length; j++) {
+        if (word[j] === userGuess) {
+            answerArray[j] = userGuess;
+            console.log(answerArray);
+
+        }
+        div.innerHTML = answerArray.join(" ");
+    }
 }
-
-// document.getElementById('guessWord').textContent = answerArray;
-
-// // Game loop
-// while (remainingLetters > 0) {
-//     // shows progress
-//     alert(answerArray.join(" "));
-
-//     // get player's guess
-//     var guess = prompt("Guess a letter");
-//     if (guess === null) {
-//         break;
-//     } else {
-//         for (var j = 0; j < word.length; j++) {
-//             if (word[j] === guess) {
-//                 answerArray[j] = guess;
-//             }
-//         }
-//     }
-// }
-
-// alert(answerArray.join(" "));
-
-
-// var winCounter = 0;
-// document.getElementById("winTally").innerHTML = wins;
