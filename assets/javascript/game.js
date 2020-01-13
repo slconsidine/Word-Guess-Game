@@ -27,17 +27,22 @@ var guessesLeft = 12;
 var div2 = document.getElementById("remainingGuess");
 div2.innerHTML = guessesLeft;
 
-// Notices user text entry
+// Notices user text entry and stores letters guessed
+var guesses = [];
+var guessed = document.getElementById("lettersGuess");
+
 document.onkeyup = function(event) {
     var userGuess = event.key;
+    guesses.push(userGuess);
+    guessed.innerHTML = guesses.join(" ");
+    console.log(guesses.length);
     console.log(userGuess);
 
 // Alerts loss if guesses run out
-if (guessesLeft === 0) {
+if (guessesLeft == 1) {
     div.innerHTML = word;
-    alert("You lost");
+    alert("25 points from Gryffindor. You lose!");
 }
-
 
 // Fills in user guess if in word and marks down counter if it's not
 if (word.includes(userGuess)) {
@@ -50,7 +55,7 @@ if (word.includes(userGuess)) {
 
     }
     if (guessesLeft > 0 && (!answerArray.includes("_"))) {
-        alert("YOu win");
+        alert("10 Points to Gryffindor! You win.");
         wins++;
         div3.innerHTML = wins;
     } 
@@ -59,6 +64,7 @@ if (word.includes(userGuess)) {
 }
 div2.innerHTML = guessesLeft;
 }
+
 
 // New word button
 document.getElementById("new").addEventListener("click", function(){
@@ -70,6 +76,9 @@ document.getElementById("new").addEventListener("click", function(){
     div.innerHTML = answerArray.join(" ");
     guessesLeft = 12;
     div2.innerHTML = guessesLeft;
+    function stopVid() {
+        vid.stop();
+    }
     };
 });
 
