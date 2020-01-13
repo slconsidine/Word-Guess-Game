@@ -55,8 +55,8 @@ if (word.includes(userGuess)) {
             answerArray[j] = userGuess;
             console.log(answerArray);
         } 
-        div.innerHTML = answerArray.join(" ");
 
+        div.innerHTML = answerArray.join(" ");
     }
     if (guessesLeft > 0 && (!answerArray.includes("_"))) {
         alert("10 Points to Gryffindor! You win.");
@@ -70,6 +70,7 @@ if (word.includes(userGuess)) {
 }
 div2.innerHTML = guessesLeft;
 }
+
 
 
 // New word button
