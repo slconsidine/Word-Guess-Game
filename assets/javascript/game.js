@@ -33,8 +33,12 @@ var guessed = document.getElementById("lettersGuess");
 
 document.onkeyup = function(event) {
     var userGuess = event.key;
-    guesses.push(userGuess);
-    guessed.innerHTML = guesses.join(" ");
+    var didPush = false;
+    if (!guesses.includes(userGuess)) {
+        guesses.push(userGuess);
+        guessed.innerHTML = guesses.join(" ");
+        didPush = true;
+    };
     console.log(guesses.length);
     console.log(userGuess);
 
@@ -60,7 +64,9 @@ if (word.includes(userGuess)) {
         div3.innerHTML = wins;
     } 
 } else {
-    guessesLeft--;
+    if (didPush) {
+        guessesLeft--;
+    }
 }
 div2.innerHTML = guessesLeft;
 }
