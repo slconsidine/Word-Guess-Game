@@ -1,5 +1,5 @@
 // Guess words to choose from
-var words = ["harry", "hermione", "ron", "hogwarts", "voldemort", "dumbledore", "hagrid", "quidditch", "gryffindor", "slytherin", "hufflepuff", "ravenclaw", "polyjuice", "butterbeer", "snape", "lumos", "dementor", "wand", "broomstick", "wizard", "witch"]; // possible word options
+var words = ["harry", "hermione", "ron", "hogwarts", "voldemort", "dumbledore", "hagrid", "quidditch", "gryffindor", "slytherin", "hufflepuff", "ravenclaw", "polyjuice", "butterbeer", "snape", "lumos", "dementor", "wand", "broomstick", "wizard", ]; // possible word options
 
 // Pick a random word
 var word = words[Math.floor(Math.random() * words.length)];
