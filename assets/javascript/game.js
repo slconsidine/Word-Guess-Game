@@ -1,5 +1,5 @@
 // Guess words to choose from
-var words = ["harry", "hermione", "ron", "hogwarts", "voldemort", "dumbledore", "hagrid", "quidditch"]; // possible word options
+var words = ["harry", "hermione", "ron", "hogwarts", "voldemort", "dumbledore", "hagrid", "quidditch", "gryffindor", "slytherin", "hufflepuff", "ravenclaw", "polyjuice", "butterbeer", "snape", "lumos", "dementor", "wand", "broomstick", "wizard", "witch"]; // possible word options
 
 // Pick a random word
 var word = words[Math.floor(Math.random() * words.length)];
@@ -76,15 +76,14 @@ div2.innerHTML = guessesLeft;
 document.getElementById("new").addEventListener("click", function(){
     word = words[Math.floor(Math.random() * words.length)];
     answerArray = [];
+    guesses = [];
+    guessed.innerHTML = guesses;
     console.log(word);
     for (var i = 0; i < word.length; i++) {
     answerArray[i] = "_";
     div.innerHTML = answerArray.join(" ");
     guessesLeft = 12;
     div2.innerHTML = guessesLeft;
-    function stopVid() {
-        vid.stop();
-    }
     };
 });
 
